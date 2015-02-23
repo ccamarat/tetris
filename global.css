@@ -1,37 +1,199 @@
+/* ********************** */
+/*      overrides         */
+/* ********************** */
 * {
-  margin: 0;
-  padding: 0;
-  border: 0;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
 }
 body {
   font-family: verdana, tahoma, arial;
   font-size: 10pt;
   text-align: center;
 }
-#bodywrap {
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-  border: 1px solid red;
+
+/* ********************** */
+/*        layout          */
+/* ********************** */
+#header {
+  width: 100%;
+  font-size: 24px;
+  text-align: center;
+  background: #3333ff;
+  background-image: -moz-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet);
+  background-image: -webkit-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet);
+  color: white;
 }
-#header: {
-  height: 75px;
-  font-size: 14pt;
+#bodywrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+}
+#contentleft, #contentcenter, #contentright {
+  float: left;
+  display: inline-block;
+  margin-top: 50px; /* header offset */
+}
+#contentleft, #contentright {
+  float: left;
+  display: inline-block;
+  width: 250px;
   text-align: center;
 }
-#gamearea {
-  background: #555555;
+.smallcontainer {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.smallcontainer > h3 {
+  background-image: -moz-linear-gradient(top left, red, rgba(255,0,0,0));
+  background-image: -webkit-linear-gradient(top left, red, rgba(255, 0, 0, 0));
   color: white;
-  height: 500px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.1em;
+  text-shadow: 1px 1px 0pt black;
+  border: 1px solid #333;
 }
-.gameblock {
+
+#pauseoverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  display: none;
+  z-index: 99;
+}
+#pauseoverlay .content {
+  text-transform: uppercase;
+  color: white;
+  font-size: 4em;
+  letter-spacing: 2em;
+  position:absolute;
+  top:50%;
+  height:240px;
+  width: 100%;
+  margin-top:-120px; /* negative half of the height */
+}
+
+/* ********************** */
+/*    game formatting     */
+/* ********************** */
+#gamearea {
+  border: 5px double #333;
+  background: white;
+}
+
+#holdarea, #nextarea {
+  border-bottom: 1px solid grey;
+  border-right: 1px solid grey;
+}
+
+.gameSquare {
+  position: absolute;
   display: block;
-  width: 20px;
-  height: 20px;
-  border: 2px solid blue;
-  background: #aaaaff;
+  border-left: 1px solid grey;
+  border-top: 1px solid grey;
 }
-.gameblock.left {
+.gameBlock {
+  position: relative;
+  right: 2px;
+  bottom: 1px;
+  border: 3px outset #333;
+  border-radius: 5px;
+}
+
+#scoreboardarea {
+  border: 1px solid #333;
+  width: 200px;
+}
+#scoreboard  dl {
+  border-bottom: 1px solid #333;
+  padding: 5px;
+  height: 20px;
+}
+#scoreboard  dt {
+  width: 10%;
+  font-size: 1.2em;
+}
+#scoreboard  dd {
+  font-weight: bold;
+  width: 120px;
+  text-align: right;
+}
+
+#statisticsarea {}
+#statistics {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #333;
+}
+#statistics dl {
+  position: relative;
+  height: 100%
+}
+#statistics dd {
+  position: absolute;
+  bottom: 0px;
+}
+
+#settingsarea {
+  position: relative;
+  width: 200px;
+  z-index: 100;
+  padding: 5px;
+  border-radius: 5px;
+  background: #eee;
+}
+#settingsarea h3 {
+  margin-top: 10px;
+}
+#settingsarea dl {
+  border: 1px solid #333;
+}
+#settingsarea dl:hover {
+  background: orange;
+}
+#settingsarea dt, #settingsarea dd {
+  padding: 2px;
+}
+#settingsarea dt {
+  font-weight: bold;
+  font-size: 0.9em;
+}
+#settingsarea input[type=text] {
+  border: 1px solid black;
+  width: 90px;
+  text-align: center;
+  background: #bbb;
+}
+#settingsarea input:hover {
+  background: #fff;
+}
+#settingsarea input[type=button] {
+  border: 2px outset #888;
+  border-radius: 5px;
+  background: white;
+  width: 100px;
+  padding: 2px;
+  margin-right: 50px;
+}
+#settingsarea input[type=button]:active {
+  border: 2px inset #888;
+}
+.keyValueTable dt{
   float: left;
+  clear: both;
+}
+.keyValueTable dd {
+  float: right;
+}
+.keyValueTable dl {
+  overflow: auto;
 }

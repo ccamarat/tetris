@@ -1,21 +1,57 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us"> 
 <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta http-equiv="cache-control" content="no-cache" />
   <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="plugins.js"></script>
   <script type="text/javascript" src="engine.js"></script>
   <link rel="stylesheet" type="text/css" href="global.css" />
+  <title>Tetris, by Logan Engineering</title>
 </head>
 <body>
+  <div id="header">
+    Tetris.
+  </div>
   <div id="bodywrap">
-    <div id="header">
-      Tetris.
+
+    <div id="contentleft">
+      <div id="holdarea" class="smallcontainer">
+        <h3>Hold</h3>
+        <div id="holdgrid"></div>
+      </div>
+      <div id="settingsarea" class="smallcontainer keyValueTable">
+        <h3>Controls</h3>
+        <dl id="controls"></dl>
+        <h3>General Settings</h3>
+        <dl id="generalsettings">
+        </dl>
+      </div>
     </div>
-    <div id="gamearea">
-      Game.
-      <span class="gameblock right"></span>
-      <span class="gameblock down"></span>
-      <span class="gameblock down"></span>
-      <span class="gameblock down"></span>
+
+    <div id="contentcenter">
+      <div id="gamearea"></div>
+    </div>
+
+    <div id="contentright">
+      <div id="nextarea" class="smallcontainer">
+        <h3>Next</h3>
+        <div id="nextgrid"></div>
+      </div>
+      <div id="scoreboardarea" class="smallcontainer keyValueTable">
+        <h3>Scoreboard</h3>
+        <div id="scoreboard"></div>
+      </div>
+      <div id="statisticsarea" class="smallcontainer">
+        <div id="statistics"></div>
+        <h3>Statistics</h3>
+      </div>
     </div>
   </div>
+
+  <div id="pauseoverlay">
+    <div class="content">paused</div>
+  </div>
+
 </body>
 </html>
